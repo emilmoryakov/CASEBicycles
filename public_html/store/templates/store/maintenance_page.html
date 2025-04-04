@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %} 
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Coda&display=swap" rel="stylesheet" />
+    <link href="{% static 'store/css/styles.css' %}" rel="stylesheet" />
+    <title>Maintenance Page</title>
+</head>
+<body>
+    <div class="v2313_3">
+        <span class="v2317_12">Maintenance Portal</span>
+        <div class="v2317_14"></div>
+        <div class="v2340_2"></div>
+        <span class="v2318_31">Manage Your Data</span>
+        
+        <ul>
+            <li><a href="{% url 'add_client' %}">Add Client</a></li>
+            <li><a href="{% url 'add_transaction' %}">Add Transaction Purchase</a></li>
+            <li><a href="{% url 'add_sale' %}">Add Transaction Sale</a></li>
+            <li><a href="{% url 'add_product' %}">Add Product</a></li>
+            <li><a href="{% url 'search' %}">Search Items</a></li>
+            <li><a href="{% url 'home' %}">Back to Home</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </div>
+</body>
+</html>

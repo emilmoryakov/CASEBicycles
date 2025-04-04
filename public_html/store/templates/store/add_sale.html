@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Sale</title>
+    {% load static %}
+    <link href="{% static 'store/css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <h2>Add Sale</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'maintenance_page' %}">Back to Maintenance Page</a>
+</body>
+</html>

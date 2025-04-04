@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log Statistics</title>
+</head>
+<body>
+    <h1>Apache Log Statistics</h1>
+    <h2>Page Access Statistics</h2>
+    <ul>
+    {% for page, data in access_stats.items %}
+        <li><strong>{{ page }}</strong>: {{ data.count }} accesses</li>
+        <ul>
+            {% for visit in data.visits %}
+            <li>{{ visit.timestamp }} - IP: {{ visit.ip }} - Browser: {{ visit.browser }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+
+    <h2>Error Logs</h2>
+    <ul>
+    {% for error in errors %}
+        <li>{{ error.timestamp }} - IP: {{ error.ip }} - Level: {{ error.level }} - Message: {{ error.message }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Timeline Diagram</h2>
+    <img src="{% static timeline_image %}" alt="Timeline Diagram">
+</body>
+</html>
